@@ -1,0 +1,16 @@
+<input placeholder="What food do you want?" (keyup)="onSearch($event)">
+<input placeholder="Where is it?" (keyup)="onLocation($event)">>
+
+<button (click)="postProfile()"> Rate! </button>
+
+<ul>
+  <li>Name: {{postData['name'] | json}}</li>
+  <li>Plus Plus Score: {{postData['sentiment'] | json}}</li>
+  <li>Key Phrases:
+  <ul>
+  <li *ngFor="let phrase of postData['keyPhrases']">{{phrase | json}}</li>
+  </ul>
+  </li>
+</ul>
+
+<input type="image" src=postData['emoji'].png alt="Submit">
